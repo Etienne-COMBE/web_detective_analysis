@@ -41,4 +41,4 @@ def merging(clients, products, sales):
 
 def export_csv(dfs, type, files):
     for i in range(len(dfs)):
-        dfs[i].to_csv(f'../data/{type}/{files[i]}.csv')
+        dfs[i].to_csv(f'../data/{type}/{files[i]}.csv', index = False)
