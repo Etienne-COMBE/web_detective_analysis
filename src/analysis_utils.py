@@ -32,6 +32,7 @@ def feature_time_series(fusion: pd.DataFrame):
     fusion['hour'] = fusion['date'].dt.hour
     fusion['date_day'] = fusion['date'].dt.date
     fusion['day'] = fusion['date'].dt.day
+    fusion['month'] = fusion['date'].dt.month
     return fusion
 
 def plot_categ_time(fusion: pd.DataFrame):
