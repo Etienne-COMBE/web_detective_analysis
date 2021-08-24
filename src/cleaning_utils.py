@@ -32,12 +32,10 @@ def cleaning_global(clients, sales, products):
     return  cleaned_clients, cleaned_sales, cleaned_products
 
 def merging(clients, products, sales):
-    fusion_by_clients_join = pd.merge(left = clients, right = sales, on = 'client_id')
-    fusion_by_clients = pd.merge(left = fusion_by_clients_join, right = products, on = 'id_prod')
-    
-    fusion_by_products_join = pd.merge(left = products, right = sales, on = 'id_prod')
-    fusion_by_products = pd.merge(left = fusion_by_products_join, right = clients, on = 'client_id')
-    return fusion_by_clients, fusion_by_products
+    fusion_join = pd.merge(left = clients, right = sales, on = 'client_id')
+    fusion = pd.merge(left = fusion_join, right = products, on = 'id_prod')
+
+    return fusion
 
 def export_csv(dfs, type, files):
     for i in range(len(dfs)):
